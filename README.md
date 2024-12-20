@@ -118,7 +118,7 @@ Rename the key file to  `your_key.json` (or update the code if using a different
 ### Google Sheets API Setup
 Enable Google Sheets API:
 
-Go to the Google Cloud Console([https://console.cloud.google.com/apis/api/drive.googleapis.com/overview?project=hackathon-445215&inv=1&invt=AbknyQ](https://console.cloud.google.com/).
+Go to the Google Cloud Console([Google Cloud Console](https://console.cloud.google.com/).
 - Create a new project (if you don't have one).
 - Go to the API & Services Dashboard and enable the Google Sheets API.
 

@@ -6,13 +6,43 @@ queries into actionable spreadsheet operations, eliminating the need for complex
 formulas or Google Sheets scripting knowledge. SheetSage empowers users by providing
 an intuitive interface to execute advanced spreadsheet tasks with ease.
 
-## Prerequisites
+## Features
 
-Before running the app, make sure you have the following installed on your machine:
+- Provide prompts for tasks related to the spreadsheet.
+- Maintain a history of embedded spreadsheets with options to rename or delete.
+- History is persisted in the browser's local storage.
+- Stylish and responsive UI with gradient backgrounds and icons.
 
-- **Python 3.8+**
-- **Node.js (for running the React frontend)**
-- **Google Cloud JSON key**: You'll need a Google Cloud project with the Google Sheets API enabled.
+## Technologies Used
+
+### Frontend
+
+- *React*: For building the user interface.
+- *TailwindCSS*: For styling.
+- *React Icons*: For the icons used in the application.
+
+### Backend
+
+- *Flask*: For handling API requests.
+- *Flask-CORS*: To manage cross-origin requests.
+---
+
+## Architecture
+
+![architecture](https://github.com/user-attachments/assets/5a4d6f3d-be44-411f-bfc7-0a9d4cc0fefe)
+
+---
+
+### Demo Video
+
+To see a demonstration of the application in action, check out the [demo video](https://youtu.be/PEG-G3RJuaw).
+
+---
+
+## Getting Started
+
+Follow these steps to set up and run the project locally:
+
 
 ## Project Structure
 
@@ -23,44 +53,124 @@ Before running the app, make sure you have the following installed on your machi
   
 - `frontend/`: Basic React app to collect user input for JSON key, Google Sheets link, and prompt.
 
-## Setting Up the Backend
+### Prerequisites
 
-1. **Clone the Repository:**
-   ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+- *Node.js*: [Download and install Node.js](https://nodejs.org/).
+- *Python 3.x*: Ensure Python is installed on your system.
+- *pip*: Python package manager (comes with Python).
 
-2. **Set Up Python Virtual Environment**
-   Create and activate a virtual environment:
-   ```bash
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+---
 
-3. **Add Google Cloud Credentials**
+### Frontend Setup
+
+1. **Navigate to the frontend directory:**
+
+   bash
+   cd frontend
+   
+
+2. **Install dependencies:**
+
+   bash
+   npm install
+   
+
+3.**Run the development server:**
+
+   bash
+   npm run dev
+   
+
+4. Open your browser and visit:
+   
+   http://localhost:5173
+   
+
+---
+
+### Backend Setup
+
+1. **Navigate to the backend directory:**
+
+   bash
+   cd backend
+   
+
+2. **Create a virtual environment (optional but recommended):**
+
+   bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use venv\Scripts\activate
+   
+
+3. **Install dependencies:**
+
+   bash
+   pip install flask flask-cors
+   
+
+   bash
+   pip install gspread oauth2client matplotlib pandas transformers[agents] google-api-python-client -qU
+
+4. **Add Google Cloud Credentials**
 Copy your Google Cloud JSON key file to the backend/ directory.
 Rename the key file to  `your_key.json` (or update the code if using a different file name).
 
-5. **Run the Flask App**
-run `python app.py`
-The backend will be running on http://127.0.0.1:5000/.
+5. **Run the Flask server:**
 
-## Setting Up the Frontend
+   bash
+   python server.py
+   
 
-### Navigate to the Frontend Directory:
-```
-cd frontend
-```
-### Install Node.js Dependencies:
-```
-npm install
+6. The backend will be running at:
+   
+   http://localhost:5000
+   
+
+---
+
+### Troubleshooting
+
+#### CORS Error
+
+If you encounter a CORS error when trying to fetch from the backend, ensure the Flask server has Flask-CORS properly installed and configured:
+
+python
+from flask_cors import CORS
+CORS(app)
+
+
+#### Dependencies Issues
+
+If a dependency is missing, run the following command in the appropriate directory:
+
+- For frontend:
+  bash
+  npm install <package-name>
+  
+- For backend:
+  bash
+  pip install <package-name>
+  
+
+---
+
+### Future Enhancements
+
+- Add user authentication.
+- Allow for sharing of spreadsheet history across devices.
+- Integrate AI-based prompt suggestions.
+
+---
+
+### License
+
+This project is licensed under the MIT License.
+
+
+
 ```
 
-### Run the React App:
-```
-npm start
-```
-
-The React app will be running on http://localhost:3000/.
 
 
 

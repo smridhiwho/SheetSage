@@ -65,21 +65,21 @@ Follow these steps to set up and run the project locally:
 
 1. **Navigate to the frontend directory:**
 
-   bash
+   ```
    cd frontend
-   
+   ```
 
 2. **Install dependencies:**
 
-   bash
+   ```
    npm install
-   
+   ```
 
 3.**Run the development server:**
 
-   bash
+   ```
    npm run dev
-   
+   ```
 
 4. Open your browser and visit:
    
@@ -92,35 +92,44 @@ Follow these steps to set up and run the project locally:
 
 1. **Navigate to the backend directory:**
 
-   bash
+   ```
    cd backend
-   
+   ```
 
 2. **Create a virtual environment (optional but recommended):**
 
-   bash
+   ```
    python -m venv venv
    source venv/bin/activate  # On Windows, use venv\Scripts\activate
-   
+   ```
 
 3. **Install dependencies:**
 
-   bash
+  ```
    pip install flask flask-cors
-   
-
-   bash
+```
+```
    pip install gspread oauth2client matplotlib pandas transformers[agents] google-api-python-client -qU
-
+```
 4. **Add Google Cloud Credentials**
 Copy your Google Cloud JSON key file to the backend/ directory.
 Rename the key file to  `your_key.json` (or update the code if using a different file name).
 
+### Google Sheets API Setup
+Enable Google Sheets API:
+
+Go to the Google Cloud Console([https://console.cloud.google.com/apis/api/drive.googleapis.com/overview?project=hackathon-445215&inv=1&invt=AbknyQ](https://console.cloud.google.com/).
+- Create a new project (if you don't have one).
+- Go to the API & Services Dashboard and enable the Google Sheets API.
+
+Create a Service Account:
+- Go to the "IAM & Admin" section and create a new service account.
+- Generate a new key for the service account in JSON format.
 5. **Run the Flask server:**
 
-   bash
+   ```
    python server.py
-   
+   ```
 
 6. The backend will be running at:
    
@@ -135,23 +144,23 @@ Rename the key file to  `your_key.json` (or update the code if using a different
 
 If you encounter a CORS error when trying to fetch from the backend, ensure the Flask server has Flask-CORS properly installed and configured:
 
-python
+```
 from flask_cors import CORS
 CORS(app)
-
+```
 
 #### Dependencies Issues
 
 If a dependency is missing, run the following command in the appropriate directory:
 
 - For frontend:
-  bash
+  ```
   npm install <package-name>
-  
+  ```
 - For backend:
-  bash
+  ```
   pip install <package-name>
-  
+  ```
 
 ---
 
